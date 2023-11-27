@@ -6,10 +6,25 @@
   
 }
 
+.carousel_btn {
+  left:0;
+
+}
+
 .carousel_parent-ecrans {
  display: flex;
  width: 100%;
  overflow-x: scroll;
  scroll-behavior: smooth;
  scroll-snap-type: x mandatory;
+}
+
+
+
+.carousel_liste-liens {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  list-style-type: none;
 }
