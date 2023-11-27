@@ -1,0 +1,15 @@
+.carousel
+
+.carousel_btn {
+  position: absolute;
+  top: calc(100vw / 2 *9);
+  
+}
+
+.carousel_parent-ecrans {
+ display: flex;
+ width: 100%;
+ overflow-x: scroll;
+ scroll-behavior: smooth;
+ scroll-snap-type: x mandatory;
+}
