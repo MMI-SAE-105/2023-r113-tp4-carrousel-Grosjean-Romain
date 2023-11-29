@@ -1,3 +1,13 @@
+/* Database CSS
+
+Sommaire :
+
+    1. main.css
+    2. carrousel.css
+    3. media.css
+    4. errorpage.css
+*/
+
 body.error-page {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -10,3 +20,47 @@ body.error-page {
     color: var(--secondary-color);
 }
 
+body.error-page .error-container {
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 15px var(--black);
+    max-width: 400px;
+    width: 100%;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+body.error-page h2 {
+    color: var(--white);
+    font-size: 3em;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+body.error-page p {
+    font-size: 1.2em;
+    margin: 0px 0;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logoerror {
+    margin: 30;
+    padding: 30;
+    height: 1.2em;
+    margin-right: 30px;
+}

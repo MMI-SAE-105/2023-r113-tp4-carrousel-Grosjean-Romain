@@ -3,13 +3,8 @@
 Sommaire :
 
     1. Variables (root)
-    2. Images
-    3. Média taille
-
-
-
-
-
+    2. Uniformisation de la mise en forme des boutons
+    3. Changements universels
 */
 
 /* Variables (root) */
@@ -40,33 +35,12 @@ button {
     text-transform: uppercase;
 }
 
-
-
-
-
 /* Changements universels */
 
 body {
     background: var(--primary-color);
     font-family: 'Montserrat', sans-serif;
-}
-
-.link-text {
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.noscroll,
-.noscroll body {
-    overflow: hidden;
-}
-
-li {
-    list-style-type: none;
+    text-decoration: none;
 }
 
 h1 {
