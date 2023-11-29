@@ -18,7 +18,7 @@ Sommaire :
 img {
     max-width: 100%;
     height: auto;
-    height: auto;
+    border-radius: 10px;
 }
 
 /* Média taille */
