@@ -1,0 +1,65 @@
+
+/* Styles pour le conteneur principal du carrousel d'écrans */
+.carousel_parent-ecrans {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    /* Permet le défilement horizontal */
+    scroll-behavior: smooth;
+    /* Animation de défilement fluide */
+    scroll-snap-type: x mandatory;
+    /* Permet le défilement par blocs horizontaux */
+}
+
+/* Styles pour chaque écran du carrousel */
+.carousel_ecran {
+    flex: 0 0 100%;
+    /* Chaque écran occupe toute la largeur du parent */
+    scroll-snap-align: start;
+    /* Alignement des écrans */
+}
+
+/* Supprime les marges par défaut des figures à l'intérieur du carrousel écran */
+.carousel_ecran figure {
+    margin: 0;
+}
+
+/* Styles pour les boutons précédent et suivant du carrousel */
+.carousel_btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    border: none;
+    display: grid;
+    place-content: center;
+    color: #fff;
+    cursor: pointer;
+    /* Curseur pointeur pour indiquer que c'est interactif */
+}
+
+/* Positionne le bouton précédent à gauche et le bouton suivant à droite */
+.carousel_btn-avant {
+    left: 0;
+}
+
+.carousel_btn-apres {
+    right: 0;
+}
+
+/* Positionne les boutons à 9/20 de la hauteur de la fenêtre */
+.carousel .carousel_btn {
+    top: calc(9/20 * 100vh);
+}
+
+/* Styles pour la liste de liens en dessous du carrousel */
+.carousel_liste-liens {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    list-style-type: none;
+}

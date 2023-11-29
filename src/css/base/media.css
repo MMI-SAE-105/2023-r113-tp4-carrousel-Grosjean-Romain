@@ -1,0 +1,29 @@
+/* Traitement des médias
+
+Sommaire :
+
+    1. Changements universels
+    2. Images
+    3. Média taille
+*/
+
+/* Changements universels */
+
+* {
+    box-sizing: border-box;
+}
+
+/* Images */
+
+img {
+    max-width: 100%;
+    height: auto;
+    height: auto;
+}
+
+/* Média taille */
+
+.media--fullwidth {
+    width: 75%;
+    height: auto;
+}

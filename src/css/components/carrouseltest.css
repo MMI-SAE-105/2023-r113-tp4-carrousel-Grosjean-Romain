@@ -3,15 +3,7 @@
 display height flex flex none margin 
 max-width width width
 */
-* {
-  /* change le box model */
-}
 
-img {
-  /* image responsive, largeur maxi */
-  height: auto;
-  width: auto;
-}
 
 .carrousel_parent-ecrans {
   /* aligne horizontalement les enfants */
