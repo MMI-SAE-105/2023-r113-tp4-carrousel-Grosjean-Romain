@@ -3,12 +3,14 @@
 Sommaire :
 
     1. main.css
-    2. carrousel.css
-    3. media.css
-    4. errorpage.css
+    2. 
 */
 
-.carousel_parent-ecrans {
+.carrousel {
+    position: relative;
+}
+
+.carrousel_parent-ecrans {
     display: flex;
     width: 100%;
     overflow-x: scroll;
@@ -16,16 +18,16 @@ Sommaire :
     scroll-snap-type: x mandatory;
 }
 
-.carousel_ecran {
+.carrousel_ecran {
     flex: 0 0 100%;
     scroll-snap-align: start;
 }
 
-.carousel_ecran figure {
+.carrousel_ecran figure {
     margin: 0;
 }
 
-.carousel_btn {
+.carrousel_btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -40,22 +42,34 @@ Sommaire :
     cursor: pointer;
 }
 
-.carousel_btn-avant {
+.carrousel_btn-avant {
     left: 0;
 }
 
-.carousel_btn-apres {
+.carrousel_btn-apres {
     right: 0;
 }
 
-.carousel .carousel_btn {
+.carrousel .carousel_btn {
     top: calc(9/20 * 100vh);
 }
 
-.carousel_liste-liens {
+.carrousel_liste-liens {
     display: flex;
     justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
     list-style-type: none;
+}
+
+.carrousel_lien {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: normal;
+    transition: color 0.3s ease-in-out;
+}
+
+.carroussel_lien.actif {
+    color: var(--secondary-color);
+    font-weight: bold;
 }

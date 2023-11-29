@@ -2,18 +2,16 @@
 
 Sommaire :
 
-    1. main.css
-    2. carrousel.css
-    3. media.css
-    4. errorpage.css
+    1. Base
+    2. Composants
 */
 
-
+/* Base */
 
 @import url(../base/main.css);
 @import url(../base/media.css);
 
-
+/* Composants */
 
 @import url(../components/carrousel.css);
 @import url(../components/errorpage.css);

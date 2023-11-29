@@ -14,9 +14,13 @@
 
 <h1>Carrousel de Biomes</h1>
 
-<div class="carrousel" x-data="{}">
-    <button class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"><</button><button class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">></button>
-    <div class="carrousel_parent-ecrans">
+<div class="carrousel" x-data="{hrefCourant:'#ecran-1'}">
+    <button class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant">&#8249;</button>
+    <button class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">&#8250;</button>
+    <div class="carrousel_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive=" hrefCourant = '#' +
+            [...$refs.parent.children]
+              .find(e => e.getBoundingClientRect().x >= 0)
+              .id">
         <div id="ecran-1" class="carrousel_ecran">
             <figure>
                 <img src="public/images/jungle.jpg" alt="image ecran 1" class="carrousel_images">
@@ -49,11 +53,11 @@
         </div>
     </div>
     <ul class="caroussel_liste-liens">
-        <li><a href="#ecran-1" class="caroussel_lien">Jungle</a></li>
-        <li><a href="#ecran-2" class="caroussel_lien">Mésa</a></li>
-        <li><a href="#ecran-3" class="caroussel_lien">Océan</a></li>
-        <li><a href="#ecran-4" class="caroussel_lien">Désert</a></li>
-        <li><a href="#ecran-5" class="caroussel_lien">Arctique</a></li>
+        <li><a href="#ecran-1" :class="{actif:hrefCourant==='#ecran-1'}" class="carroussel_lien">Jungle</a></li>
+        <li><a href="#ecran-2" class="carroussel_lien">Mésa</a></li>
+        <li><a href="#ecran-3" class="carroussel_lien">Océan</a></li>
+        <li><a href="#ecran-4" class="carroussel_lien">Désert</a></li>
+        <li><a href="#ecran-5" class="carroussel_lien">Arctique</a></li>
     </ul>
 </div>
 </body>
