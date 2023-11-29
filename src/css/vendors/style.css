@@ -7,6 +7,7 @@ Sommaire :
     3. media.css
 */
 
-@import url(main.css);
-@import url(carrousel.css);
-@import url(media.css);
+@import url(../base/main.css);
+@import url(../base/media.css);
+@import url(../components/carrousel.css);
+@import url(../components/errorpage.css);
