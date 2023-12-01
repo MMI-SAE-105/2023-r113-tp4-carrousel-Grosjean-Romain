@@ -13,6 +13,7 @@
 .carrousel_ecran {
     flex: 0 0 100%;
     scroll-snap-align: start;
+    text-align: center;
 }
 
 .carrousel_ecran figure {
@@ -20,7 +21,6 @@
     position: relative;
     overflow: hidden;
     border-radius: 8px;
-    text-align: center;
     text-decoration-color: var(--secondary-color);
 }
 
@@ -38,6 +38,7 @@
     color: var(--white);
     cursor: pointer;
     z-index: 1;
+    font-size: 1.5rem;
 }
 
 .carrousel_btn-avant {
@@ -74,11 +75,16 @@
     color: var(--white);
     font-weight: bold;
     text-decoration: none;
-       
 }
 
 .carrousel_images {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.carrousel_description {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-top: 1rem;
 }
