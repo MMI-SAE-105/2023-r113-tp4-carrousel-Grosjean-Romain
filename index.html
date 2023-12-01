@@ -14,7 +14,7 @@
 
 <h1>Carrousel de Biomes</h1>
 
-<div class="carrousel" x-data="{hrefCourant:'#ecran-1'}">
+<div class="carrousel" x-data="{hrefCourant:'#ecran-1', ecrans:5}">
     <button class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant" @click="decreEcran">&#8249;</button>
     <button class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant" @click="incrementEcran">&#8250;</button>
     <div class="carrousel_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive=" hrefCourant = '#' +
@@ -25,31 +25,31 @@
         <div id="ecran-1" class="carrousel_ecran">
             <figure>
                 <img src="public/images/jungle.jpg" alt="image ecran 1" class="carrousel_images">
-                <figcaption>Jungle</figcaption>
+                <figcaption class="carrousel_description">Jungle</figcaption>
             </figure>
         </div>
         <div id="ecran-2" class="carrousel_ecran" class="carrousel_images">
             <figure>
                 <img src="public/images/mesa.jpg" alt="image ecran 2">
-                <figcaption>Mésa</figcaption>
+                <figcaption class="carrousel_description">Mésa</figcaption>
             </figure>
         </div>
         <div id="ecran-3" class="carrousel_ecran">
             <figure>
                 <img src="public/images/ocean.jpg" alt="image ecran 3" class="carrousel_images">
-                <figcaption>Océan</figcaption>
+                <figcaption class="carrousel_description">Océan</figcaption>
             </figure>
         </div>
         <div id="ecran-4" class="carrousel_ecran">
             <figure>
                 <img src="public/images/desert.jpg" alt="image ecran 4" class="carrousel_images">
-                <figcaption>Désert</figcaption>
+                <figcaption class="carrousel_description">Désert</figcaption>
             </figure>
         </div>
         <div id="ecran-5" class="carrousel_ecran">
             <figure>
                 <img src="public/images/arctic.jpg" alt="image ecran 5" class="carrousel_images">
-                <figcaption>Arctique</figcaption>
+                <figcaption class="carrousel_description">Arctique</figcaption>
             </figure>
         </div>
     </div>
