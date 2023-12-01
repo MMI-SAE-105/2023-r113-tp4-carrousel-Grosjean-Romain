@@ -11,17 +11,13 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs"></script>
     <script>
-        Alpine.data('carrousel', function () {
+        .data('carrousel', function () {
             return {
                 carrouselActif: true,
+                ecrans: 5,
                 toggleCarrousel() {
                     this.carrouselActif = !this.carrouselActif;
                 },
-            };
-        });
-
-        Alpine.data('carrousel', function () {
-            return {
                 incrementEcran() {
                     if (this.carrouselActif && this.ecrans < 5) {
                         this.ecrans++;
@@ -39,56 +35,58 @@
     </script>
 </head>
 
-<h1>Carrousel de Biomes</h1>
+<body>
+    <h1>Carrousel de Biomes</h1>
 
-<div class="carrousel" x-data="{hrefCourant:'#ecran-1', ecrans:5}">
-    <button @click="toggleCarrousel" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant" @click="decreEcran">&#8249;</button>
-    <button @click="toggleCarrousel" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant"
-        @click="incrementEcran">&#8250;</button>
-    <div class="carrousel_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive=" hrefCourant = '#' +
-                [...$refs.parent.children]
-                .find(e => e.getBoundingClientRect().x >= 0)
-                .id
-                ">
-        <div id="ecran-1" class="carrousel_ecran">
-            <figure>
-                <img src="public/images/jungle.jpg" alt="image ecran 1" class="carrousel_images">
-                <figcaption class="carrousel_description">Jungle</figcaption>
-            </figure>
+    <div class="carrousel" x-data="carrousel">
+        <button @click="toggleCarrousel" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant"
+            @click="decreEcran">&#8249;</button>
+        <button @click="toggleCarrousel" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant"
+            @click="incrementEcran">&#8250;</button>
+        <div class="carrousel_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive=" hrefCourant = '#' +
+                    [...$refs.parent.children]
+                    .find(e => e.getBoundingClientRect().x >= 0)
+                    .id
+                    ">
+            <div id="ecran-1" class="carrousel_ecran">
+                <figure>
+                    <img src="public/images/jungle.jpg" alt="image ecran 1" class="carrousel_images">
+                    <figcaption class="carrousel_description">Jungle</figcaption>
+                </figure>
+            </div>
+            <div id="ecran-2" class="carrousel_ecran" class="carrousel_images">
+                <figure>
+                    <img src="public/images/mesa.jpg" alt="image ecran 2">
+                    <figcaption class="carrousel_description">Mésa</figcaption>
+                </figure>
+            </div>
+            <div id="ecran-3" class="carrousel_ecran">
+                <figure>
+                    <img src="public/images/ocean.jpg" alt="image ecran 3" class="carrousel_images">
+                    <figcaption class="carrousel_description">Océan</figcaption>
+                </figure>
+            </div>
+            <div id="ecran-4" class="carrousel_ecran">
+                <figure>
+                    <img src="public/images/desert.jpg" alt="image ecran 4" class="carrousel_images">
+                    <figcaption class="carrousel_description">Désert</figcaption>
+                </figure>
+            </div>
+            <div id="ecran-5" class="carrousel_ecran">
+                <figure>
+                    <img src="public/images/arctic.jpg" alt="image ecran 5" class="carrousel_images">
+                    <figcaption class="carrousel_description">Arctique</figcaption>
+                </figure>
+            </div>
         </div>
-        <div id="ecran-2" class="carrousel_ecran" class="carrousel_images">
-            <figure>
-                <img src="public/images/mesa.jpg" alt="image ecran 2">
-                <figcaption class="carrousel_description">Mésa</figcaption>
-            </figure>
-        </div>
-        <div id="ecran-3" class="carrousel_ecran">
-            <figure>
-                <img src="public/images/ocean.jpg" alt="image ecran 3" class="carrousel_images">
-                <figcaption class="carrousel_description">Océan</figcaption>
-            </figure>
-        </div>
-        <div id="ecran-4" class="carrousel_ecran">
-            <figure>
-                <img src="public/images/desert.jpg" alt="image ecran 4" class="carrousel_images">
-                <figcaption class="carrousel_description">Désert</figcaption>
-            </figure>
-        </div>
-        <div id="ecran-5" class="carrousel_ecran">
-            <figure>
-                <img src="public/images/arctic.jpg" alt="image ecran 5" class="carrousel_images">
-                <figcaption class="carrousel_description">Arctique</figcaption>
-            </figure>
-        </div>
+        <ul class="caroussel_liste-liens">
+            <li><a href="#ecran-1" :class="{actif:hrefCourant==='#ecran-1'}" class="carroussel_lien">Jungle</a></li>
+            <li><a href="#ecran-2" :class="{actif:hrefCourant==='#ecran-1'}" class="carroussel_lien">Mésa</a></li>
+            <li><a href="#ecran-3" :class="{actif:hrefCourant==='#ecran-1'}" class="carroussel_lien">Océan</a></li>
+            <li><a href="#ecran-4" :class="{actif:hrefCourant==='#ecran-1'}" class="carroussel_lien">Désert</a></li>
+            <li><a href="#ecran-5" :class="{actif:hrefCourant==='#ecran-1'}" class="carroussel_lien">Arctique</a></li>
+        </ul>
     </div>
-    <ul class="caroussel_liste-liens">
-        <li><a href="#ecran-1" :class="{actif:hrefCourant==='#ecran-1'}" class="carroussel_lien">Jungle</a></li>
-        <li><a href="#ecran-2" :class="{actif:hrefCourant==='#ecran-1'}" class="carroussel_lien">Mésa</a></li>
-        <li><a href="#ecran-3" :class="{actif:hrefCourant==='#ecran-1'}" class="carroussel_lien">Océan</a></li>
-        <li><a href="#ecran-4" :class="{actif:hrefCourant==='#ecran-1'}" class="carroussel_lien">Désert</a></li>
-        <li><a href="#ecran-5" :class="{actif:hrefCourant==='#ecran-1'}" class="carroussel_lien">Arctique</a></li>
-    </ul>
-</div>
 </body>
 
 </html>
