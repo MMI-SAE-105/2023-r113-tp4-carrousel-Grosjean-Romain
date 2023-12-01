@@ -11,10 +11,11 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs"></script>
     <script>
-        .data('carrousel', function () {
+        Alpine.data('carrousel', function () {
             return {
                 carrouselActif: true,
                 ecrans: 5,
+                hrefCourant: '#ecran-1',
                 toggleCarrousel() {
                     this.carrouselActif = !this.carrouselActif;
                 },
@@ -29,6 +30,18 @@
                         this.ecrans--;
                         this.sethrefCourant();
                     }
+                },
+                goToEcran(ecran) {
+                    if (this.carrouselActif) {
+                        this.ecrans = ecran;
+                        this.sethrefCourant();
+                    }
+                },
+                sethrefCourant() {
+                    this.hrefCourant = '#' +
+                        [...this.$refs.parent.children]
+                            .find(e => e.getBoundingClientRect().x >= 0)
+                            .id;
                 },
             };
         });
@@ -48,7 +61,7 @@
                     .find(e => e.getBoundingClientRect().x >= 0)
                     .id
                     ">
-            <div id="ecran-1" class="carrousel_ecran">
+            <div x-for="i in ecrans" :key="i" :id="'ecran-' + i" class="carrousel_ecran">
                 <figure>
                     <img src="public/images/jungle.jpg" alt="image ecran 1" class="carrousel_images">
                     <figcaption class="carrousel_description">Jungle</figcaption>
@@ -81,10 +94,10 @@
         </div>
         <ul class="caroussel_liste-liens">
             <li><a href="#ecran-1" :class="{actif:hrefCourant==='#ecran-1'}" class="carroussel_lien">Jungle</a></li>
-            <li><a href="#ecran-2" :class="{actif:hrefCourant==='#ecran-1'}" class="carroussel_lien">Mésa</a></li>
-            <li><a href="#ecran-3" :class="{actif:hrefCourant==='#ecran-1'}" class="carroussel_lien">Océan</a></li>
-            <li><a href="#ecran-4" :class="{actif:hrefCourant==='#ecran-1'}" class="carroussel_lien">Désert</a></li>
-            <li><a href="#ecran-5" :class="{actif:hrefCourant==='#ecran-1'}" class="carroussel_lien">Arctique</a></li>
+            <li><a href="#ecran-2" :class="{actif:hrefCourant==='#ecran-2'}" class="carroussel_lien">Mésa</a></li>
+            <li><a href="#ecran-3" :class="{actif:hrefCourant==='#ecran-3'}" class="carroussel_lien">Océan</a></li>
+            <li><a href="#ecran-4" :class="{actif:hrefCourant==='#ecran-4'}" class="carroussel_lien">Désert</a></li>
+            <li><a href="#ecran-5" :class="{actif:hrefCourant==='#ecran-5'}" class="carroussel_lien">Arctique</a></li>
         </ul>
     </div>
 </body>
