@@ -14,11 +14,12 @@
     flex: 0 0 100%;
     scroll-snap-align: start;
     text-align: center;
+    flex: none;
 }
 
 .carrousel_ecran figure {
     margin: 0;
-    position: relative;
+    
     overflow: hidden;
     border-radius: 8px;
     text-decoration-color: var(--secondary-color);
@@ -27,26 +28,26 @@
 .carrousel_btn {
     position: absolute;
     top: 50%;
+    top: calc(min(730px, 100vw) / 16 * 9 / 2 + 1rem);
     transform: translateY(-50%);
     width: 2rem;
     height: 2rem;
     background: var(--black);
-    border-radius: 50%;
+    border-radius: 100%;
     border: none;
     display: grid;
     place-content: center;
     color: var(--white);
     cursor: pointer;
-    z-index: 1;
-    font-size: 1.5rem;
+    padding: 5px 17px;    
 }
 
 .carrousel_btn-avant {
-    left: 1rem;
+    left: 0;
 }
 
 .carrousel_btn-apres {
-    right: 1rem;
+    right: 0;
 }
 
 .carrousel .carousel_btn {
@@ -56,10 +57,30 @@
 .carrousel_liste-liens {
     display: flex;
     justify-content: center;
+    margin: 0;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 4px;
+    padding: 1rem 0.5rem;
     list-style-type: none;
 }
+
+ button.lien {
+     background-color: none;
+     border: none;
+     color: white;
+     padding: 5px 36px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     border-radius: 6%;
+     cursor: pointer;
+ }
+
+ button:hover {
+     background-color: #ddd;
+     color: #ddd;
+ }
 
 .carrousel_lien {
     text-decoration: none;
@@ -69,6 +90,7 @@
     padding: 0.5rem 1rem;
     border-radius: 8px;
     border: 1px solid var(--black);
+    text-decoration: none;
 }
 
 .carroussel_lien.actif {
@@ -88,4 +110,96 @@
     color: var(--white);
     font-size: 1.5rem;
     margin-top: 1rem;
+}
+
+.list {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    list-style-type: none;
+    text-decoration: none;
+    color: var(--white);
+}
+
+* {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.carrousel_parent-ecrans {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+}
+
+.carrousel_ecran {
+    width: 100%;
+    flex: none;
+    scroll-snap-align: start;
+}
+
+.carrousel_ecran figure {
+    margin: 0;
+}
+
+.carrousel {
+    position: relative;
+}
+
+.carrousel_btn {
+    position: absolute;
+    top: 50%;
+    top: calc(min(730px, 100vw) / 16 * 9 / 2 + 1rem);
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 100%;
+    border: none;
+    display: grid;
+    place-content: center;
+    color: #fff;
+    padding: 5px 17px;
+
+}
+
+.carrousel_btn-avant {
+    left: 0;
+}
+
+.carrousel_btn-apres {
+    right: 0;
+}
+
+.caroussel_liste-liens {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    list-style: none;
+    gap: 1rem;
+    margin-top: 40px;
+    padding: 1rem 0.5rem;
+    text-decoration: none;
+
+}
+
+button.lien {
+    background-color: #004466;
+    border: none;
+    color: white;
+    padding: 5px 36px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 6%;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ddd;
+    color: #ddd;
 }
